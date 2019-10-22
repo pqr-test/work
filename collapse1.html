@@ -1,0 +1,107 @@
+
+<style>
+    .container{
+        margin: 0px;
+        padding: 0px;
+    }
+    .card{
+        height: 100%;
+        width: 100%;
+    }
+    .card1,.card2,.card3{
+        border: 1px solid green;
+    }
+    .card-header1{
+        background-color: red;
+        width: 100%;
+        min-height: 50px;
+    }
+    .card-header2{
+        background-color: blue;
+        width: 100%;
+        min-height: 50px;
+    }
+    .card-header3{
+        background-color: yellow;
+        width: 100%;
+        min-height: 50px;
+    }
+    a{
+        color:white;
+        text-decoration: none;
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .inactive{
+      display: none;  
+    }
+</style>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card1">
+            <div class="card-header1">
+                <a onclick="toggleClass('aaa')" href="#" >card-container-1</a>
+            </div>
+            <div class="card-body inactive" id="aaa">
+               <p>
+                Nature retains its position as the most cited weekly science journal, with over 390,000 cites,
+                an increase of almost 18,000 on last year’s count. And Nature continues to publish more
+                articles than any other multidisciplinary journal. For 2006 Nature’s impact factor is 26.681.
+                The impact factor of a journal is calculated by dividing the number of current year citations
+                to the source items published in that journal during the previous two years. It is an
+                independent measure calculated by Thomson/ISI (Institute for Scientific Information),
+                Philadelphia, USA.
+                UGC-Infonet Digital Library Consortium has got subscription to only the Nature Journal,
+                which can be accessed at the member Universities through their registered IP addresses.
+               </p>
+            </div>
+        </div>
+        <div class="card2">
+            <div class="card-header2" >
+                <a  onclick="toggleClass('bbb')"  href="#">card-container-2</a>
+            </div>
+            <div class="card-body inactive" id="bbb">
+                <p>
+                    Nature retains its position as the most cited weekly science journal, with over 390,000 cites,
+                    an increase of almost 18,000 on last year’s count. And Nature continues to publish more
+                    articles than any other multidisciplinary journal. For 2006 Nature’s impact factor is 26.681.
+                    The impact factor of a journal is calculated by dividing the number of current year citations
+                    to the source items published in that journal during the previous two years. It is an
+                    independent measure calculated by Thomson/ISI (Institute for Scientific Information),
+                    Philadelphia, USA.
+                    UGC-Infonet Digital Library Consortium has got subscription to only the Nature Journal,
+                    which can be accessed at the member Universities through their registered IP addresses.
+                </p>
+            </div>
+        </div>
+        <div class="card3">
+            <div class="card-header3">
+                <a onclick="toggleClass('ccc')"  href="#">card-container-3</a>
+            </div>
+            <div class="card-body inactive" id="ccc">
+                <p>
+                    Nature retains its position as the most cited weekly science journal, with over 390,000 cites,
+                    an increase of almost 18,000 on last year’s count. And Nature continues to publish more
+                    articles than any other multidisciplinary journal. For 2006 Nature’s impact factor is 26.681.
+                    The impact factor of a journal is calculated by dividing the number of current year citations
+                    to the source items published in that journal during the previous two years. It is an
+                    independent measure calculated by Thomson/ISI (Institute for Scientific Information),
+                    Philadelphia, USA.
+                    UGC-Infonet Digital Library Consortium has got subscription to only the Nature Journal,
+                    which can be accessed at the member Universities through their registered IP addresses.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleClass(eleSelector){
+        if($("#" + eleSelector).hasClass("inactive"))
+        $("#" + eleSelector).removeClass("inactive");
+        else
+        $("#" + eleSelector).addClass("inactive");
+    }
+</script>
