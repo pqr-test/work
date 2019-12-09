@@ -1,0 +1,55 @@
+
+<button class="btn btn-primary text-white" (click)="gotologin()">go to loginpage</button>
+<div class="container my-5 ">
+    <div class="form-group ">
+        <ng-select [items]="users" bindLabel="name" bindValue="id"  placeholder="username" (change)="namechange($event)"></ng-select>
+         
+    </div>
+    <table class="table table-striped my-3 ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of users">
+                <td><a routerLink="/viewpage/{{data.id}}">{{data.id}}</a> </td>
+                <td>
+                    <button type="button" tooltip="{{data.name}} " [adaptivePosition]="false" placement="top" triggers="focus">
+                         {{data.name}}
+                    </button> 
+                </td>
+                <td>{{data.email}}</td>
+                <td>{{data.phone}}</td>
+                <button type="button" class="btn btn-primary  btn-sm mt-2 mx-2" (click)="openModal(template)">Edit</button>
+                <button class="btn btn-secondary btn-sm mt-2"><a class="text-white" routerLink="/title">View</a></button>
+                <ng-template #template>
+                    <div class="modal-header">
+                        <h4 class="modal-title pull-left">Modal</h4>
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="container">
+                        <div class=" form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" value="{{data.id}}"/>
+                            <label>password</label>
+                            <input type="email" class="form-control" value="{{data.email}}"/>
+                            <div>
+                                <button class="btn btn-sm btn-success mt-2" (click)="validate()">
+                                    <a class="text-white" routerLink="/edit">submit</a>
+                                </button>
+                                <button class="btn btn-sm btn-danger ml-2 mt-2 btn-close" aria-label="Close"  (click)="modalRef.hide()">cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>  
+            </tr>
+        </tbody>
+    </table>
+</div>

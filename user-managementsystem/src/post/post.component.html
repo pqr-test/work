@@ -1,0 +1,27 @@
+<div class="container my-5">
+        <div class="form-group ">
+            <ng-select [items]="users" bindLabel="title" placeholder="title" (change)="changekey($event)"></ng-select>
+            <p>{{selectedtitle | json}}</p>
+        </div>
+        <table class="table  table-striped my-3 ">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>title</th>
+                    <th>body</th>
+                    <th>Action</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of users">
+                    <td>{{data.id}}</td>
+                    <td>{{data.title}}</td>
+                    <td>{{data.body}}</td>
+                    <button class="btn btn-sm btn-info mt-2">
+                        <a routerLink="/postTile">Edit</a>
+                    </button>   
+                </tr> 
+            </tbody>
+        </table>
+    </div>
